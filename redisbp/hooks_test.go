@@ -17,7 +17,6 @@ func TestSpanHook(t *testing.T) {
 	hooks := redisbp.SpanHook{ClientName: "redis"}
 	statusCmd := redis.NewStatusCmd("ping")
 	stringCmd := redis.NewStringCmd("get", "1")
-	stringCmd.SetErr(redis.Nil)
 
 	t.Run(
 		"Before/AfterProcess",
